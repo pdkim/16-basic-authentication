@@ -2,16 +2,18 @@
 
 const superagent = require('superagent');
 const mongoose = require('mongoose');
-const app = require('../../../src/app.js');
+const app = require('../src/app.js');
 
-jest.mock('../../../src/auth/model.js');
+// const mocker = require('../src/auth/model.js');
+
+jest.mock('../src/auth/model.js');
 
 describe('Authentication Server should', () => {
 
   const PORT = 3001;
 
   beforeAll( () => {
-    mongoose.connect('mongodb://localhost:27017/auth');
+    mongoose.connect('mongodb://localhost:27017/lab-16');
     app.start(PORT);
   });
 

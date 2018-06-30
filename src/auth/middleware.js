@@ -18,7 +18,7 @@ export default (req, res, next) => {
   };
 
   let getAuth = () => {
-    next({status:401,statusMessage:'Unauthorized',message:'Invalid user or password idiot!'});
+    next({status:401,statusMessage:'Unauthorized',message:'Invalid user or password!'});
   };
 
   try {

@@ -29,6 +29,7 @@
     "dotenv": "^6.0.0",
     "eslint": "^5.0.1",
     "express": "^4.16.3",
+    "http-errors": "^1.6.3",
     "jest": "^23.2.0",
     "jsonwebtoken": "^8.3.0",
     "mockgoose": "^7.3.5",

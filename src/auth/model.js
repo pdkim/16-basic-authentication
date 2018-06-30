@@ -6,8 +6,8 @@ import jwt from 'jsonwebtoken';
 
 const userSchema = new mongoose.Schema({
   username: {type: String, required: true, unique: true},
-  email: {type: String, required: true, unique: true},
   password: {type: String, required: true},
+  email: {type: String, required: true, unique: true},
 });
 
 userSchema.pre('save', function(next) {
@@ -19,7 +19,7 @@ userSchema.pre('save', function(next) {
     .catch(error => {throw error;});
 });
 
-userSchema.static.authenticate = function(auth) {
+userSchema.statics.authenticate = function(auth) {
   let query = {username: auth.username};
   return this.findOne(query)
     .then(user => user && user.comparePassword(auth.password))
@@ -35,4 +35,4 @@ userSchema.methods.generateToken = function() {
   return jwt.sign( {id: this._id}, process.env.APP_SECRET || 'changeit');
 };
 
-export default mongoose.model('User', userSchema);
+export default mongoose.model('users', userSchema);

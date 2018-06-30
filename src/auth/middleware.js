@@ -18,7 +18,7 @@ export default (req, res, next) => {
   };
 
   let getAuth = () => {
-    next({status: 401, statusMessage: 'Unauthorized', message: 'Invalid user or password idiot!'});
+    next({status:401,statusMessage:'Unauthorized',message:'Invalid user or password idiot!'});
   };
 
   try {
@@ -30,6 +30,7 @@ export default (req, res, next) => {
     }
 
     if(authHeader.match(/basic/i)) {
+      
       let base64Header = authHeader.replace(/Basic\s+/i, '');
       let base64Buffer = Buffer.from(base64Header,'base64');
       let bufferString = base64Buffer.toString();

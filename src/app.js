@@ -4,21 +4,22 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 
-import router from '../src/auth/router.js';
-import errorHandler from '../src/middleware/error.js';
-import notFound from '../src/middleware/404.js';
+import router from './auth/router.js';
+import errorHandler from './middleware/error.js';
+import notFound from './middleware/404.js';
 
-let app = express();
+const app = express();
 
-app.use(cors);
+app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-app.use(router);
+app.use('/', router);
 
-app.use(errorHandler);
-app.use(notFound);
+app.use('*', errorHandler);
+app.use('*', notFound);
+
 
 let server;
 

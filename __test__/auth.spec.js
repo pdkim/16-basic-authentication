@@ -1,14 +1,14 @@
 'use strict';
 
+require('dotenv').config();
 const superagent = require('superagent');
 const mongoose = require('mongoose');
 const app = require('../src/app.js');
 
-// const mocker = require('../src/auth/model.js');
 
 jest.mock('../src/auth/model.js');
 
-describe('Authentication Server should', () => {
+xdescribe('Authentication Server should', () => {
 
   const PORT = 3001;
 

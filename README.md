@@ -1,6 +1,8 @@
 ##Travis:
+[![Build Status](https://travis-ci.com/pdkim/16-basic-authentication.svg?branch=pk16)](https://travis-ci.com/pdkim/16-basic-authentication)
 
 ##Heroku:
+https://pk16-basic-authorization.herokuapp.com/
 
 ##Github:
 https://github.com/pdkim/16-basic-authentication
